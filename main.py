@@ -1,6 +1,7 @@
 from datetime import date
 from hashlib import md5
 import os
+from dotenv import load_dotenv
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
@@ -25,6 +26,8 @@ pip3 install -r requirements.txt
 
 This will install the packages from the requirements.txt for this project.
 '''
+
+load_dotenv(".env")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
